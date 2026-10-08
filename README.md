@@ -96,7 +96,7 @@ $SetStartupVolume = $true
 $StartVolume = 96
 ```
 
-The volume value is passed directly to the Yamaha API, so verify the correct value for your model before enabling this.
+The volume value is passed directly to the Yamaha API, so verify the correct value for your model with YamahaStatus.ps1, before enabling this.
 
 ### Standby on logoff
 
