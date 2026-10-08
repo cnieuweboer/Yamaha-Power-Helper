@@ -16,7 +16,7 @@ The goal is to make the amplifier behave more naturally with PC sleep, resume an
 ## Files
 
 - `YamahaPowerHelper.ps1` — main helper
-- `StartYamahaPowerHelper.vbs` — starts the PowerShell helper invisibly
+- `YamahaPowerHelper.vbs` — starts the PowerShell helper invisibly
 - `Yamaha Power Helper.xml` — Task Scheduler task that can be imported
 
 ## Configuration
@@ -109,7 +109,7 @@ The included Task Scheduler XML assumes the files are placed here:
 
 ```text
 C:\Scripts\Yamaha\YamahaPowerHelper.ps1
-C:\Scripts\Yamaha\StartYamahaPowerHelper.vbs
+C:\Scripts\Yamaha\YamahaPowerHelper.vbs
 ```
 
 Copy the files to that folder, edit the configuration in `YamahaPowerHelper.ps1`, then import:
@@ -120,7 +120,7 @@ Yamaha Power Helper.xml
 
 into Windows Task Scheduler.
 
-The task starts `StartYamahaPowerHelper.vbs` at logon. The VBScript launches the PowerShell helper without leaving a visible PowerShell window open.
+The task starts `YamahaPowerHelper.vbs` at logon. The VBScript launches the PowerShell helper without leaving a visible PowerShell window open.
 
 The helper then remains running for the Windows session and reacts to Windows power/session events.
 
