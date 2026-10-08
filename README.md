@@ -66,6 +66,21 @@ For the R-N2000A USB DAC input:
 $PCInput = "usb_dac"
 ```
 
+If you are unsure what input name your Yamaha uses, select the desired input on the amplifier and run:
+
+```powershell
+.\YamahaStatus.ps1
+```
+
+Its output includes both the API input name and the human-readable input name, for example:
+
+```text
+input      : usb_dac
+input_text : USB DAC
+```
+
+Use the value shown for `input` as `$PCInput`.
+
 ### Startup volume
 
 Volume changes are disabled by default.
