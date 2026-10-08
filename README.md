@@ -66,7 +66,11 @@ For the R-N2000A USB DAC input:
 $PCInput = "usb_dac"
 ```
 
-If you are unsure what input name your Yamaha uses, select the desired input on the amplifier and run:
+If you are unsure what input name your Yamaha uses, download `YamahaStatus.ps1`.
+
+Edit $YamahaIP in the script to match the IP address of your Yamaha.
+
+Then select the desired input on the amplifier and run:
 
 ```powershell
 .\YamahaStatus.ps1
