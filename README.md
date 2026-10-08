@@ -139,6 +139,8 @@ Yamaha Power Helper.xml
 
 into Windows Task Scheduler.
 
+`YamahaStatus.ps1` is only a configuration helper and is not needed for normal operation
+
 The task starts `YamahaPowerHelper.vbs` at logon. The VBScript launches the PowerShell helper without leaving a visible PowerShell window open.
 
 The helper then remains running for the Windows session and reacts to Windows power/session events.
