@@ -13,11 +13,39 @@ The goal is to make the amplifier behave more naturally with PC sleep, resume an
 - Optionally set a startup volume when the script powers the Yamaha on.
 - Optionally put the Yamaha into standby on Windows logoff.
 
+## Installation
+
+Keep these files together in the same folder:
+
+```text
+YamahaPowerHelper.ps1
+YamahaPowerHelper.vbs
+install.ps1
+```
+
+1. Edit the configuration in `YamahaPowerHelper.ps1`.
+2. Run `install.ps1` as the Windows user who should run the helper.
+3. When prompted, choose the Task Scheduler folder:
+   - Press **Enter** to install the task in the Task Scheduler root.
+   - Or enter a folder such as `\User`.
+
+The installer automatically:
+
+- detects its own folder
+- configures the task to launch the included `YamahaPowerHelper.vbs`
+- creates the task for the current Windows user
+- starts the helper automatically when that user logs on
+
+Administrator privileges are not required for the scheduled task itself.
+
+The helper then remains running for the Windows session and reacts to Windows power/session events.
+
 ## Files
 
 - `YamahaPowerHelper.ps1` — main helper
 - `YamahaPowerHelper.vbs` — starts the PowerShell helper invisibly
 - `Yamaha Power Helper.xml` — Task Scheduler task that can be imported
+- `YamahaStatus.ps1` is only a configuration helper and is not needed for normal operation
 
 ## Configuration
 
@@ -121,39 +149,6 @@ The default log location is:
 ```text
 C:\Logs\YamahaPowerHelper.log
 ```
-
-## Installation
-
-Keep these files together in the same folder:
-
-```text
-YamahaPowerHelper.ps1
-YamahaPowerHelper.vbs
-install.ps1
-```
-
-The folder can be located anywhere.
-
-1. Edit the configuration in `YamahaPowerHelper.ps1`.
-2. Run `install.ps1` as the Windows user who should run the helper.
-3. When prompted, choose the Task Scheduler folder:
-   - Press **Enter** to install the task in the Task Scheduler root.
-   - Or enter a folder such as `\User`.
-
-The installer automatically:
-
-- detects its own folder
-- configures the task to launch the included `YamahaPowerHelper.vbs`
-- creates the task for the current Windows user
-- starts the helper automatically when that user logs on
-
-Administrator privileges are not required for the scheduled task itself.
-
-`YamahaStatus.ps1` is only a configuration helper and is not needed for normal operation
-
-The task starts `YamahaPowerHelper.vbs` at logon. The VBScript launches the PowerShell helper without leaving a visible PowerShell window open.
-
-The helper then remains running for the Windows session and reacts to Windows power/session events.
 
 ## Requirements
 
