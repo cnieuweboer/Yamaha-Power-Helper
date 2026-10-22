@@ -124,20 +124,30 @@ C:\Logs\YamahaPowerHelper.log
 
 ## Installation
 
-The included Task Scheduler XML assumes the files are placed here:
+Keep these files together in the same folder:
 
 ```text
-C:\Scripts\Yamaha\YamahaPowerHelper.ps1
-C:\Scripts\Yamaha\YamahaPowerHelper.vbs
+YamahaPowerHelper.ps1
+YamahaPowerHelper.vbs
+install.ps1
 ```
 
-Copy the files to that folder, edit the configuration in `YamahaPowerHelper.ps1`, then import:
+The folder can be located anywhere.
 
-```text
-Yamaha Power Helper.xml
-```
+1. Edit the configuration in `YamahaPowerHelper.ps1`.
+2. Run `install.ps1` as the Windows user who should run the helper.
+3. When prompted, choose the Task Scheduler folder:
+   - Press **Enter** to install the task in the Task Scheduler root.
+   - Or enter a folder such as `\User`.
 
-into Windows Task Scheduler.
+The installer automatically:
+
+- detects its own folder
+- configures the task to launch the included `YamahaPowerHelper.vbs`
+- creates the task for the current Windows user
+- starts the helper automatically when that user logs on
+
+Administrator privileges are not required for the scheduled task itself.
 
 `YamahaStatus.ps1` is only a configuration helper and is not needed for normal operation
 
